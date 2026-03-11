@@ -1,0 +1,37 @@
+h1 {
+  font-weight: 700;
+  font-size: 45px;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-container {
+  width: 100%;
+}
+
+input {
+  width: 100px;
+}
+
+.by-milk {
+  margin-top: 5px;
+}
+
+.items-container {
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+  max-width: 600px;
+}
+
+.kg-row {
+  margin: 10px 5px;
+}
+
+.todo-item-margin {
+  margin-top: 5px;
+}
+
+.kg-button {
+  min-width: 50px;
+}
