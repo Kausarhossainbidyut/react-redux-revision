@@ -1,21 +1,16 @@
-
+import ErrorMessage from "./components/ErrorMessage";
+import FoodItems from "./components/FoodItems";
+import "./App.css"
 
 const App = () => {
-
-  // let foodItem = ['dal','green vegrafd', 'adfa', 'adflkja', 'akdfla']
-  let foodItem = []
-  let emptyMessage = foodItem.length === 5 ? <h>full</h>: null;
+  let foodItem = ["dal", "green vegrafd", "adfa", "adflkja", "akdfla"];
+  // let foodItem = []
 
   return (
     <>
-      <h1>Healthy Food</h1>
-      {foodItem.length === 0 && <h3>ki shob bolo kili</h3>}
-      {emptyMessage}
-      {foodItem.length ===0 ? <h3>I am still hungry.</h3>: null}
-      <ul className="list-group">
-        {foodItem.map((items,index) =><li key={index} class="list-group-item">{items}</li>)}
-        
-      </ul>
+      <h1 className="food-heading item-khb">Healthy Food</h1>
+      <ErrorMessage items={foodItem}></ErrorMessage>
+      <FoodItems items={foodItem}></FoodItems>
     </>
   );
 };
