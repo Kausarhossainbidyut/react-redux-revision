@@ -1,10 +1,15 @@
 import React from 'react';
+import ClockHeading from './components/ClockHeading';
+import ClockSlogan from './components/ClockSlogan';
+import CurrentTime from './components/CurrentTime';
 
 const App = () => {
   return (
-    <div>
-      Ba
-    </div>
+    <center>
+      <ClockHeading/>
+      <ClockSlogan/>
+      <CurrentTime/>
+    </center>
   );
 };
 

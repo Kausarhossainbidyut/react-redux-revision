@@ -2,9 +2,9 @@ import React from 'react';
 
 const ClockHeading = () => {
     return (
-        <div>
-            
-        </div>
+        <h1>
+            Bangla Clock
+        </h1>
     );
 };
 

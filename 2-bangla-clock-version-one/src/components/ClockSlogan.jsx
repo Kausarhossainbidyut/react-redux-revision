@@ -2,9 +2,7 @@ import React from 'react';
 
 const ClockSlogan = () => {
     return (
-        <div>
-            
-        </div>
+        <p>This is the clock that shows the time in Bangla at all times.</p>
     );
 };
 
