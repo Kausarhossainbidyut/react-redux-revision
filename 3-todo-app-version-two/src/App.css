@@ -10,28 +10,15 @@ h1 {
 }
 
 input {
-  width: 100px;
+  width: 200px;
 }
 
-.by-milk {
-  margin-top: 5px;
-}
-
-.items-container {
+.items-container{
+  margin: 5px;
   text-align: left;
-  display: inline-block;
-  width: 100%;
-  max-width: 600px;
+}
+.container{
+  margin: 5px;
+  text-align: left;
 }
 
-.kg-row {
-  margin: 10px 5px;
-}
-
-.todo-item-margin {
-  margin-top: 5px;
-}
-
-.kg-button {
-  min-width: 50px;
-}
