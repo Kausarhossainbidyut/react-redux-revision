@@ -1,9 +1,4 @@
-h1 {
-  font-weight: 700;
-  font-size: 45px;
-  margin: 10px;
-  margin-bottom: 20px;
-}
+
 
 .todo-container {
   width: 100%;
@@ -11,11 +6,6 @@ h1 {
 
 input {
   width: 200px;
-}
-
-.items-container{
-  margin: 5px;
-  text-align: left;
 }
 .container{
   margin: 5px;

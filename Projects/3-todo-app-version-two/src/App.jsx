@@ -3,6 +3,7 @@ import AppName from "./components/AppName";
 import AddTodo from "./components/AddTodo";
 import "./App.css";
 import TodoItem from "./components/TodoItem";
+import TodoItems from "./components/TodoItems";
 
 const App = () => {
   const todoItem = [
@@ -13,10 +14,8 @@ const App = () => {
     <div className="todo-container text-center">
       <AppName />
       <AddTodo />
-      <div className="items-container">
-        <TodoItem todoDate="4/10/2026" todoName="Buy Milk"></TodoItem>
-        <TodoItem todoDate="4/10/2026" todoName="Go to College"></TodoItem>
-      </div>
+      <TodoItems todoItem={todoItem}></TodoItems>
+      
     </div>
   );
 };

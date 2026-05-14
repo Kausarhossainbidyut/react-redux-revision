@@ -1,8 +1,9 @@
 import React from 'react';
+import style from './AppName.module.css'
 
 const AppName = () => {
   return (
-    <h1>Todo App</h1>
+    <h1 className={style.todoHeading}>Todo App</h1>
   );
 };
 
