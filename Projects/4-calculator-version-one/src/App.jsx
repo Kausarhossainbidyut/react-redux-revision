@@ -1,9 +1,13 @@
-import React from 'react';
+import styles from './App.module.css'
+import ButtonsContainer from './components/ButtonsContainer';
+import Display from './components/Display';
 
 const App = () => {
+  
   return (
-    <div>
-      Calculator 
+    <div className={styles.calculator}>
+      <Display></Display>
+      <ButtonsContainer></ButtonsContainer>
     </div>
   );
 };
