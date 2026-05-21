@@ -10,6 +10,7 @@ const AddTodo = ({ onNewItems }) => {
     
   };
   
+  // comment 
   const handleDateChange = (event) => {
     setDueDate(event.target.value);
     console.log(event.target.value);
