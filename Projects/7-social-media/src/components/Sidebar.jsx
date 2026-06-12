@@ -49,6 +49,7 @@ const Sidebar = ({ selectedTab, setSelectedTab }) => {
 
         <li
           onClick={() => {
+            
             setSelectedTab("Create Post");
           }}
         >
