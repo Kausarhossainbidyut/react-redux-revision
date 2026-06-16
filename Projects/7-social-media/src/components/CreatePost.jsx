@@ -16,6 +16,11 @@ const CreatePost = () => {
     const postBody = postBodyElement.current.value;
     const reaction = reactionElement.current.value;
     const tags = tagsElement.current.value.split(/\s+/);
+    userIdElement.current.value=''
+    postTitleElement.current.value = ''
+    postBodyElement.current.value = ''
+    reactionElement.current.value = ''
+    tagsElement.current.value = ''
 
     addPost(userId, postTitle, postBody, reaction, tags);
   };
@@ -76,7 +81,7 @@ const CreatePost = () => {
       </div>
       <div className="mb-3">
         <label htmlFor="tags" className="form-label">
-          Post Title
+          Post Tags
         </label>
 
         <input
