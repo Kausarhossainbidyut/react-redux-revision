@@ -5,7 +5,7 @@ const WelcomeMessage = ({onGetPostsClick}) => {
     <>
       <center className="welcome-message">
         <h1> There are no posts</h1>
-        <button onClick={onGetPostsClick} className="btn btn-primary">Get Posts From Server</button>
+        {/* <button onClick={onGetPostsClick} className="btn btn-primary">Get Posts From Server</button> */}
       </center>
     </>
   );
