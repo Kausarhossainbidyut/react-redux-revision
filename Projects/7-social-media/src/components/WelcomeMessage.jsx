@@ -1,13 +1,14 @@
-import React from 'react';
+import React from "react";
 
-const WelcomeMessage = () => {
-    return (
-        <>
-        <center>
-           <h1 className='welcome-message'> There are no posts</h1>
-            </center>
-        </>
-    );
+const WelcomeMessage = ({onGetPostsClick}) => {
+  return (
+    <>
+      <center className="welcome-message">
+        <h1> There are no posts</h1>
+        <button onClick={onGetPostsClick} className="btn btn-primary">Get Posts From Server</button>
+      </center>
+    </>
+  );
 };
 
 export default WelcomeMessage;
