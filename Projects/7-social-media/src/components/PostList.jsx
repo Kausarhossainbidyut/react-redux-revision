@@ -9,23 +9,32 @@ const PostList = () => {
   const [fetching, setFetching] = useState(false);
 
   // 3rd workspace
-  useEffect(() => {
-    setFetching(true);
-    const controller = new AbortController()
-    const signal = controller.signal
-    
-    fetch("https://dummyjson.com/posts", {signal})
-      .then((res) => res.json())
-      .then((data) => {
-        addInitialPosts(data.posts);
-        setFetching(false);
-      });
+ useEffect(() => {
+  setFetching(true)
 
-      return () =>{
-        console.log("Cleaning up useEffect.");
-        controller.abort()
+  const controller = new AbortController();
+  const signal = controller.signal;
+
+  fetch("https://dummyjson.com/posts", { signal })
+    .then((res) => res.json())
+    .then((data) => {
+      addInitialPosts(data.posts);
+      setFetching(false);
+    })
+    .catch((error) => {
+      if (error.name === "AbortError") {
+        console.log("Fetch aborted");
+      } else {
+        console.error(error);
       }
-  }, []);
+      setFetching(false);
+    });
+
+  return () => {
+    console.log("Cleaning up useEffect.");
+    controller.abort();
+  };
+}, []);
 
   // 2nd workspace
   // const [dataFetched, setDataFetched] = useState(false)
