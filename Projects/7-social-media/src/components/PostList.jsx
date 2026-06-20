@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Post from "./Post";
 import { PostList as PostListData } from "../store/PostListStore";
 import WelcomeMessage from "./WelcomeMessage";
@@ -6,11 +6,10 @@ import LoadingSpinner from "./LoadingSpinner";
 
 const PostList = () => {
   const { postList, addInitialPosts } = useContext(PostListData);
-  const [fetching, setFetching] = useState(false);
+  const [fetching, setFetching] = useState(true);
 
   // 3rd workspace
  useEffect(() => {
-  setFetching(true)
 
   const controller = new AbortController();
   const signal = controller.signal;
