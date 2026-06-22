@@ -1,39 +1,33 @@
-import { useContext, useEffect, useState } from "react";
+import { } from "react";
 import Post from "./Post";
-import { PostList as PostListData } from "../store/PostListStore";
 import WelcomeMessage from "./WelcomeMessage";
-import LoadingSpinner from "./LoadingSpinner";
+import { useLoaderData } from "react-router-dom";
 
 const PostList = () => {
-  const { postList, addInitialPosts } = useContext(PostListData);
-  const [fetching, setFetching] = useState(true);
+  const postList =useLoaderData()
+
 
   // 3rd workspace
- useEffect(() => {
+//  useEffect(() => {
 
-  const controller = new AbortController();
-  const signal = controller.signal;
+//   const controller = new AbortController();
+//   const signal = controller.signal;
 
-  fetch("https://dummyjson.com/posts", { signal })
-    .then((res) => res.json())
-    .then((data) => {
-      addInitialPosts(data.posts);
-      setFetching(false);
-    })
-    .catch((error) => {
-      if (error.name === "AbortError") {
-        console.log("Fetch aborted");
-      } else {
-        console.error(error);
-      }
-      setFetching(false);
-    });
+  
+//     .catch((error) => {
+//       if (error.name === "AbortError") {
+//         console.log("Fetch aborted");
+//       } else {
+//         console.error(error);
+//       }
+//       setFetching(false);
+//     });
 
-  return () => {
-    console.log("Cleaning up useEffect.");
-    controller.abort();
-  };
-}, []);
+//   return () => {
+//     console.log("Cleaning up useEffect.");
+//     controller.abort();
+//   };
+// }, []);
 
   // 2nd workspace
   // const [dataFetched, setDataFetched] = useState(false)
@@ -58,11 +52,20 @@ const PostList = () => {
 
   return (
     <>
-      {fetching && <LoadingSpinner />}
-      {!fetching && postList.length === 0 && <WelcomeMessage />}
-      {!fetching && postList.map((post) => <Post key={post.id} post={post} />)}
+      {postList.length === 0 && <WelcomeMessage />}
+      {postList.map((post) => <Post key={post.id} post={post} />)}
     </>
   );
-};
+}
+
+export const postLoader = () =>{
+return fetch("https://dummyjson.com/posts")
+    .then((res) => res.json())
+    .then((data) => {
+      return data.posts
+    })
+  }
+
 
 export default PostList;
+
