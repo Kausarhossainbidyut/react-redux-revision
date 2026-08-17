@@ -6,7 +6,6 @@ const DisplayCounter = () => {
     <>
       <p className="lead mb-4">
         Counter current value: {counter}
-        
       </p>
     </>
   );
