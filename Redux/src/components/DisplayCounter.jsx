@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 const DisplayCounter = () => {
-   const counter = useSelector(stop => stop.counter)
+   const counter = useSelector(store => store.counter);
   return (
     <>
       <p className="lead mb-4">
